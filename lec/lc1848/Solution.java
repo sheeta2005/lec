@@ -1,4 +1,4 @@
-package com.sheeta1998.lec.lc1848;
+package lec.lc1848;
 
 class Solution {
     public int getMinDistance(int[] nums, int target, int start) {
