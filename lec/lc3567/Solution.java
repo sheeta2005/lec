@@ -1,4 +1,4 @@
-package com.sheeta1998.lec.lc3567;
+package lc3567;
 
 import java.util.Arrays;
 

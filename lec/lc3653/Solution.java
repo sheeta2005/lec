@@ -1,4 +1,4 @@
-package com.sheeta1998.lec.lc3653;
+package lc3653;
 class Solution {
     final int MOD = 1000000007;
     public int xorAfterQueries(int[] nums, int[][] queries) {

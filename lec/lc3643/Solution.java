@@ -1,4 +1,4 @@
-package com.sheeta1998.lec.lc3643;
+package lc3643;
 
 
 public class Solution {
