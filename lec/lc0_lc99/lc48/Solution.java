@@ -1,4 +1,4 @@
-package lc48;
+package lc0_lc99.lc48;
 
 class Solution {
     public void rotate(int[][] matrix) {

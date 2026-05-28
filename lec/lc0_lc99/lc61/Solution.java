@@ -1,4 +1,4 @@
-package lc61;
+package lc0_lc99.lc61;
 
 
 class Solution {

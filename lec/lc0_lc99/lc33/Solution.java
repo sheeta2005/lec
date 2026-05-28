@@ -1,4 +1,4 @@
-package lc33;
+package lc0_lc99.lc33;
 
 public class Solution {
     public int search(int[] nums, int target) {

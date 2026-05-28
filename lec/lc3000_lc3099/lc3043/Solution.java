@@ -1,4 +1,4 @@
-package lc3043;
+package lc3000_lc3099.lc3043;
 
 import java.util.HashSet;
 

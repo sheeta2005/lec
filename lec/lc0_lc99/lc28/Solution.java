@@ -1,4 +1,4 @@
-package lc28;
+package lc0_lc99.lc28;
 
 class Solution {
 
