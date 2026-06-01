@@ -1,4 +1,4 @@
-package lc3120;
+package lc3100_lc3199.lc3120;
 
 public class Solution {
     public int numberOfSpecialChars(String word) {
