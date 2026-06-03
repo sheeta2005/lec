@@ -1,4 +1,4 @@
-package lc3629;
+package lc3600_lc3699.lc3629;
 
 import java.util.*;
 

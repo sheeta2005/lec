@@ -1,4 +1,4 @@
-package lc3660;
+package lc3600_lc3699.lc3660;
 
 import java.util.Arrays;
 

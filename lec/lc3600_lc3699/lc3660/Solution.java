@@ -1,4 +1,4 @@
-package lc3660;
+package lc3600_lc3699.lc3660;
 
 class Solution {
     public void erFen(int[] nums, int right, int[] res, int[][] prevmax, int min, int max) {

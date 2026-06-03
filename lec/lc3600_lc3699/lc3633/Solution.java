@@ -1,4 +1,4 @@
-package lc3633;
+package lc3600_lc3699.lc3633;
 
 class Solution {
     public int earliestFinishTime(int[] landStartTime, int[] landDuration, int[] waterStartTime, int[] waterDuration) {

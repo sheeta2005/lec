@@ -1,4 +1,4 @@
-package lc3643;
+package lc3600_lc3699.lc3643;
 
 
 public class Solution {
