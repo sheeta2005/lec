@@ -1,45 +1,76 @@
 package lc3753;
 
-public class Solution {
+import java.util.Arrays;
+
+class Solution {
+    private String s;
+    private int n;
+    private long[][][] memoCnt;
+    private long[][][] memoSum;
+
     public long totalWaviness(long num1, long num2) {
-        return calc(num2) - calc(num1 - 1);
+        return solve(num2) - solve(num1 - 1);
     }
 
-    private long calc(long num) {
-        char[] c = String.valueOf(num).toCharArray();
-        long[][][][] dp = new long[16][2][11][11];
+    private long solve(long num) {
+        if (num < 100) return 0L;
+        s = Long.toString(num);
+        n = s.length();
+        memoCnt = new long[16][10][10];
+        memoSum = new long[16][10][10];
+
         for (int i = 0; i < 16; i++) {
-            for (int j = 0; j < 2; j++) {
-                for (int k = 0; k < 11; k++) {
-                    // 直接填充最后一维的一维数组
-                    java.util.Arrays.fill(dp[i][j][k], -1);
-                }
+            for (int j = 0; j < 10; j++) {
+                Arrays.fill(memoCnt[i][j], -1);
+                Arrays.fill(memoSum[i][j], -1);
             }
         }
-        //10是不可能到达的地方
-        return dfs(dp, 0, 1, 10, 10, c);
+        long[] res = dfs(0, -1, -1, true, true);
+        return res[1];
     }
 
-    private long dfs(long[][][][] dp, int pos, int tight, int last1, int last2, char[] c) {
-        if (pos == c.length) {
-            return 0;
+    private long[] dfs(int pos, int prev, int curr, boolean isLimit, boolean isLeading) {
+        // 【绝对不能改顺序】先判断终止条件，再访问记忆化
+        if (pos == n) {
+            return new long[]{1L, 0L};
         }
-        if (dp[pos][tight][last1][last2] != -1) {
-            return dp[pos][tight][last1][last2];
-        }
-        long res = 0;
-        int max = tight == 1 ? c[pos] - '0' : 9;
 
-        for (int i = 0; i <= max; i++) {
-            int newTight = (tight == 1 && i == max) ? 1 : 0;
-            if (last1 != 10 && last2 != 10) {
-                if ((last1 > last2 && last2 < i) || (last1 < last2 && last2 > i)) {
-                    res+=1;
+        // 只有无前导零、无上限限制、且已有两位有效数字时，才使用记忆化
+        if (!isLimit && !isLeading && prev >= 0 && curr >= 0) {
+            if (memoCnt[pos][prev][curr] != -1) {
+                return new long[]{memoCnt[pos][prev][curr], memoSum[pos][prev][curr]};
+            }
+        }
+
+        long cnt = 0, sum = 0;
+        int up = isLimit ? (s.charAt(pos) - '0') : 9;
+
+        for (int digit = 0; digit <= up; digit++) {
+            boolean newLeading = isLeading && (digit == 0);
+            int newPrev = curr;
+            int newCurr = newLeading ? -1 : digit;
+
+            long[] sub = dfs(pos + 1, newPrev, newCurr, isLimit && (digit == up), newLeading);
+            long subCnt = sub[0], subSum = sub[1];
+
+            // 计算当前位的波动贡献
+            if (!newLeading && prev >= 0 && curr >= 0) {
+                if ((prev < curr && curr > digit) || (prev > curr && curr < digit)) {
+                    // 当前位是峰/谷，所有子方案都加1个波动值
+                    sum += subCnt;
                 }
             }
-            res += dfs(dp, pos + 1, newTight, last2, i, c);
 
+            cnt += subCnt;
+            sum += subSum;
         }
-        return dp[pos][tight][last1][last2] = res;
+
+        // 更新记忆化
+        if (!isLimit && !isLeading && prev >= 0 && curr >= 0) {
+            memoCnt[pos][prev][curr] = cnt;
+            memoSum[pos][prev][curr] = sum;
+        }
+
+        return new long[]{cnt, sum};
     }
 }
