@@ -1,4 +1,4 @@
-package lc1306;
+package lc1300_lc1399.lc1306;
 
 public class Solution {
     public boolean canReach(int[] arr, int start) {

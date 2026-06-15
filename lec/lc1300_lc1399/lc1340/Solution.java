@@ -1,4 +1,4 @@
-package lc1340;
+package lc1300_lc1399.lc1340;
 
 import java.util.Arrays;
 

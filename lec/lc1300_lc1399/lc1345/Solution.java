@@ -1,4 +1,4 @@
-package lc1345;
+package lc1300_lc1399.lc1345;
 
 import java.util.*;
 

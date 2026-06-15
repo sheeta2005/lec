@@ -1,4 +1,4 @@
-package lc1391;
+package lc1300_lc1399.lc1391;
 
 class Solution {
 

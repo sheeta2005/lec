@@ -1,4 +1,4 @@
-package lc2078;
+package lc2000_lc2099.lc2078;
 class Solution {
     public int maxDistance(int[] colors) {
         int n = colors.length;

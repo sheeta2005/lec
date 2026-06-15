@@ -1,4 +1,4 @@
-package lc2069;
+package lc2000_lc2099.lc2069;
 
 public class Robot {
     int width = 0;
