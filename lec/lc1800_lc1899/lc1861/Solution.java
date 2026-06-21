@@ -1,4 +1,4 @@
-package lc1861;
+package lc1800_lc1899.lc1861;
 class Solution {
     public char[][] rotateTheBox(char[][] boxGrid) {
         int m = boxGrid.length;

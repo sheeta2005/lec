@@ -1,6 +1,4 @@
-package lc1871;
-
-import java.util.Arrays;
+package lc1800_lc1899.lc1871;
 
 public class Solution {
     public boolean canReach(String s, int minJump, int maxJump) {
