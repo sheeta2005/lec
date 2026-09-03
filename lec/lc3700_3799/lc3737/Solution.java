@@ -1,4 +1,4 @@
-package lc3737;
+package lc3700_3799.lc3737;
 
 class Solution {
     public int countMajoritySubarrays(int[] nums, int target) {

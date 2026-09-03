@@ -1,4 +1,4 @@
-package lc3751;
+package lc3700_3799.lc3751;
 
 class Solution {
     public int totalWaviness(int num1, int num2) {

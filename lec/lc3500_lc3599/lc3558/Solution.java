@@ -1,4 +1,4 @@
-package lc3558;
+package lc3500_lc3599.lc3558;
 
 import java.util.ArrayList;
 import java.util.List;

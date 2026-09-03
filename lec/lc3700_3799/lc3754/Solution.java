@@ -1,4 +1,4 @@
-package lc3754;
+package lc3700_3799.lc3754;
 
 class Solution {
     public long sumAndMultiply(int n) {

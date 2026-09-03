@@ -1,4 +1,4 @@
-package lc3753;
+package lc3700_3799.lc3753;
 
 import java.util.Arrays;
 
