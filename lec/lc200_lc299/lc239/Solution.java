@@ -1,4 +1,4 @@
-package lc239;
+package lc200_lc299.lc239;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

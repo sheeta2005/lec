@@ -1,6 +1,4 @@
-package lc189;
-
-import java.util.Arrays;
+package lc100_lc199.lc189;
 
 class Solution {
     public void rotate(int[] nums, int k) {

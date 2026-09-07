@@ -1,4 +1,4 @@
-package lc238;
+package lc200_lc299.lc238;
 
 class Solution {
     public int[] productExceptSelf(int[] nums) {

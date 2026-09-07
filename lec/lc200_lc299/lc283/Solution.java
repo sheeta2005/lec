@@ -1,4 +1,4 @@
-package lc283;
+package lc200_lc299.lc283;
 
 class Solution {
     public void moveZeroes(int[] nums) {

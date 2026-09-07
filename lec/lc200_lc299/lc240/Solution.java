@@ -1,4 +1,4 @@
-package lc240;
+package lc200_lc299.lc240;
 
 public class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
