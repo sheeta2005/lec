@@ -1,5 +1,6 @@
 package lc0_lc99.lc25;
 
+
 class Solution {
 
     public class ListNode {
@@ -21,44 +22,36 @@ class Solution {
 
     public ListNode reverseKGroup(ListNode head, int k) {
         ListNode dummy = new ListNode();
+        ListNode cur ;
+        ListNode prev ;
+        ListNode temp ;
+        ListNode nextGroupBegin = head;
+        ListNode lastGroupEnd = dummy;
+        ListNode begin ;
+        ListNode end ;
+
         dummy.next = head;
-        ListNode begin = head;
-        ListNode end = head;
-
-        ListNode nextGroup = dummy;
-
-        //dummy 1 2 3 4 5 6
-
-        while (end != null) {
-            end = begin;
+        //dummy 1 2 3 4 5
+        while (true) {
+            begin=nextGroupBegin;
+            end=nextGroupBegin;
             for (int i = 1; i < k; i++) {
-                end = end.next;
-                if (end == null) {
-                    return dummy.next;
-                }
+                end=end.next;
+                if (end==null){return dummy.next;}
             }
-            nextGroup .next= end;
-            nextGroup = end.next;
-            end.next=null;
-            //dummy 1 2 3 4 5 6
-            //开始转换
-            ListNode pos2 = begin;
-            ListNode prev = dummy;
-            ListNode temp = head;
-            while (pos2 != nextGroup) {
-
-                temp = pos2.next;
-                pos2.next = prev;
-                prev = pos2;
-                pos2 = temp;
+            nextGroupBegin=end.next;
+            cur=begin;
+            prev=nextGroupBegin;
+            while (cur!=nextGroupBegin){
+                temp= cur.next;
+                cur.next=prev;
+                prev=cur;
+                cur=temp;
             }
-
-            begin.next = nextGroup;
-            begin = nextGroup;
-
+            lastGroupEnd.next=end;
+            lastGroupEnd=begin;
         }
 
 
-        return dummy.next;
     }
 }
