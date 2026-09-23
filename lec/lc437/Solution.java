@@ -23,22 +23,28 @@ class Solution {
 
     public int pathSum(TreeNode root, int targetSum) {
         int[] res = new int[1];
-        int sum = 0;
-        dfs(root, sum, targetSum, res);
-
+        dfs1(root, targetSum, res);
         return res[0];
     }
-    private void dfs(TreeNode root, int prev, int targetSum, int[] res) {
-        if (root==null){return;}
-        prev += root.val;
-        if (prev == targetSum) {
-            res[0] += 1;
+
+    void dfs1(TreeNode root, int targetSum, int[] res) {
+        if (root == null) {
+            return;
         }
-        dfs(root.left, prev, targetSum, res);
-        dfs(root.right, prev, targetSum, res);
-        prev -= root.val;
-        if (prev == targetSum) {
-            res[0] += 1;
+        dfs2(root, targetSum, res, 0);
+        dfs1(root.left, targetSum, res);
+        dfs1(root.right, targetSum, res);
+    }
+
+    void dfs2(TreeNode root, int targetSum, int[] res, long prev) {
+        if (root == null) {
+            return;
         }
+        long sum = prev + root.val;
+        if (sum == targetSum) {
+            res[0]++;
+        }
+        dfs2(root.left, targetSum, res, sum);
+        dfs2(root.right, targetSum, res, sum);
     }
 }
