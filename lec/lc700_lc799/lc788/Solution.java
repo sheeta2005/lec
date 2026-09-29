@@ -1,4 +1,4 @@
-package lc788;
+package lc700_lc799.lc788;
 
 class Solution {
     private String s;

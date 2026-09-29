@@ -1,4 +1,4 @@
-package lc396;
+package lc300_lc399.lc396;
 
 class Solution {
     public int maxRotateFunction(int[] nums) {
