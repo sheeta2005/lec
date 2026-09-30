@@ -1,4 +1,4 @@
-package lc1752;
+package lc1700_lc1799.lc1752;
 
 class Solution {
     public boolean check(int[] nums) {

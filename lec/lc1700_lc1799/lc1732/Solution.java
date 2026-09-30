@@ -1,4 +1,4 @@
-package lc1732;
+package lc1700_lc1799.lc1732;
 class Solution {
     public int largestAltitude(int[] gain) {
         int max = 0;
