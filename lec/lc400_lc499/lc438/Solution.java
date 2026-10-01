@@ -1,4 +1,4 @@
-package lc438;
+package lc400_lc499.lc438;
 
 import java.util.ArrayList;
 import java.util.HashMap;
