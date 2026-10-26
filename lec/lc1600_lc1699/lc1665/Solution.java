@@ -1,4 +1,4 @@
-package lc1665;
+package lc1600_lc1699.lc1665;
 
 import java.util.Arrays;
 

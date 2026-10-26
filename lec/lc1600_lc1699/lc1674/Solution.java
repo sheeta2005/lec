@@ -1,4 +1,4 @@
-package lc1674;
+package lc1600_lc1699.lc1674;
 
 class Solution {
     public int minMoves(int[] nums, int limit) {
