@@ -1,4 +1,4 @@
-package lc1431;
+package lc1400_lc1499.lc1431;
 
 import java.util.ArrayList;
 import java.util.List;

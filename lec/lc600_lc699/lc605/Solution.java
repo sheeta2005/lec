@@ -1,4 +1,4 @@
-package lc605;
+package lc600_lc699.lc605;
 
 class Solution {
     public boolean canPlaceFlowers(int[] flowerbed, int n) {
